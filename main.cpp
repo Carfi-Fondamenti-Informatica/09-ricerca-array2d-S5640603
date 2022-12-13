@@ -1,32 +1,35 @@
 #include <iostream>
-#include "lib.h"
 using namespace std;
+#include "lib.h"
 
-int main() {
+int main(){
+
     char nomi[10][20];
     char nome[20];
-    int posizione=0;
-        for (int i=0; i<10; i++ ){
-            for(int j=0; j<20; j++){
-                nome[j]= ' ';
-                nomi[i][j] = ' ';
-            }
-        }
-        cout<<"Inserire 10 nomi di massino 20 caratteri"<<endl;
+    int posizione = 0;
 
-    for (int i=0; i<10; i++ ){
-        cin>> nomi[i];
+    for (int i = 0; i < 10; i++)
+    {
+        for (int j = 0; j < 20; j++)
+        {
+            nome[j] = ' ';
+            nomi[i][j] = ' ';
+        }
     }
-    cout<<"Inserire il nome da cercare"<<endl;
+
+    for (int i = 0; i < 10; i++)
+    {
+        cin >> nomi[i];
+    }
     cin >> nome;
 
     if (find(nomi, nome, posizione))
     {
-        cout << posizione << endl;
+        cout << posizione;
     }
     else
     {
-        cout << "nome non presente nella lista"<<endl;
+        cout << "non presente";
     }
 
     return 0;
